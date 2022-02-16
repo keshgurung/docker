@@ -2,9 +2,13 @@ FROM node:17-alpine
 
 WORKDIR /index
 
-COPY . . 
+COPY package.json .
+
+# without copy package.json we can't run npm install
 
 RUN npm install 
+
+COPY . . 
 
 EXPOSE 4000 
 
