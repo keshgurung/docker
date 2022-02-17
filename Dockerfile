@@ -1,5 +1,8 @@
 FROM node:17-alpine
 
+RUN npm install -g nodemon
+
+
 WORKDIR /index
 
 COPY package.json .
@@ -12,7 +15,7 @@ COPY . .
 
 EXPOSE 4000 
 
-CMD ["node", "index.js"]
+CMD ["npm", "run","start"]
 
 
 
